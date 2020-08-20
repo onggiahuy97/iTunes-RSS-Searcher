@@ -38,13 +38,14 @@ struct SingleFeedView: View {
                 .frame(width: width, height: height)
                 .cornerRadius(12)
             VStack(alignment: .leading) {
-                Text(result.artistName ?? "Play list")
+                Text(result.name)
                     .font(.subheadline)
                     .lineLimit(2)
-                Text(result.name)
+                Text(result.artistName ?? "Play list")
                     .font(.caption)
                     .foregroundColor(.secondary)
-                    .lineLimit(3)
+                    .lineLimit(2)
+                
             }
         }
     }

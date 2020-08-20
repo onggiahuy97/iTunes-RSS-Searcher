@@ -6,7 +6,7 @@
 //
 
 extension FeedSetting {
-    enum MediaType: String, CaseIterable {
+    enum MediaType: String, CaseIterable, Codable {
         case books          = "books"
         case apps           = "ios-apps"
         case iTunesMusic    = "itunes-music"

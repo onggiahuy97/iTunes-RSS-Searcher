@@ -28,6 +28,7 @@ struct FeedSettingView: View {
     private func startFetching() {
         model.feed.feed = .init(title: "Loading", results: [])
         model.fetchAPIUsingCombine()
+        model.saveFeedSetting()
         presentation.wrappedValue.dismiss()
     }
     

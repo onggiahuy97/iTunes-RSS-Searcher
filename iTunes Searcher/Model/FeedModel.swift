@@ -9,13 +9,14 @@ import Foundation
 import Combine
 
 class FeedModel: ObservableObject {
+    
     @Published var feedSetting: FeedSetting {
         didSet {
             feedSettingDidChange()
             endpoint = feedSetting.endpoint()
         }
     }
-
+    
     @Published var feed: GenericFeed 
     @Published var feedType: [FeedSetting.FeedType] = []
     @Published var genre: [FeedSetting.Genre] = []
@@ -25,8 +26,9 @@ class FeedModel: ObservableObject {
     var cancellable: AnyCancellable?
     
     init() {
-        feedSetting = .init(Country: .us, MediaType: .apps, FeedType: .topFree, Genre: .all, ResultLimit: 15, AllowExplicit: true)
+        feedSetting = FeedModel.initFeedSetting
         feed = .init(feed: .init(title: "Welcome", results: []))
+        feedSetting = loadFeedSetting()
         feedSettingDidChange()
         endpoint = feedSetting.endpoint()
         fetchAPIUsingCombine()
@@ -34,6 +36,33 @@ class FeedModel: ObservableObject {
 }
 
 extension FeedModel {
+    func saveFeedSetting() {
+        let user = UserDefaults.standard
+        
+        do {
+            let encodedFS = try JSONEncoder().encode(feedSetting)
+            user.set(encodedFS, forKey: FeedSetting.Key)
+        } catch {
+            print(error)
+        }
+    }
+    
+    func loadFeedSetting() -> FeedSetting {
+        let user = UserDefaults.standard
+        
+        guard let data = user.object(forKey: FeedSetting.Key) as? Data else {
+            return FeedModel.initFeedSetting
+        }
+        
+        do {
+            let decodedSF = try JSONDecoder().decode(FeedSetting.self, from: data)
+            return decodedSF
+        } catch {
+            print(error)
+            return FeedModel.initFeedSetting
+        }
+    }
+    
     func fetchAPIUsingCombine() {
         guard let url = URL(string: endpoint ?? "") else { return }
         self.cancellable = URLSession.shared.dataTaskPublisher(for: url)
@@ -107,5 +136,25 @@ extension FeedModel {
             feedType = [.topMusicVideos]
             genre = [.all]
         }
+    }
+}
+
+extension FeedModel {
+    static let initFeedSetting: FeedSetting =
+        .init(Country: .us,
+              MediaType: .apps,
+              FeedType: .topFree,
+              Genre: .all,
+              ResultLimit: 15,
+              AllowExplicit: true)
+    
+    func toString() -> String {
+        let string = feedSetting.Country.rawValue       + " • " +
+            feedSetting.MediaType.toString()            + " • " +
+            feedSetting.FeedType.toString()             + " • " +
+            "Limit: \(feedSetting.ResultLimit)"         + " • " +
+            feedSetting.Genre.toString()                + " • " +
+            "\(feedSetting.AllowExplicit ? "" : "Non-")Explicit"
+        return string
     }
 }

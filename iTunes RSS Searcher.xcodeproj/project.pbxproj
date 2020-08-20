@@ -28,7 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3EBC046924E8EEBF00767522 /* iTunes Searcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iTunes Searcher.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EBC046924E8EEBF00767522 /* iTunes RSS Searcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iTunes RSS Searcher.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EBC046C24E8EEBF00767522 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3EBC046E24E8EEBF00767522 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3EBC047024E8EEBF00767522 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -40,6 +40,7 @@
 		3EBC048324E9759C00767522 /* FeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedModel.swift; sourceTree = "<group>"; };
 		3EBC048524E97E9900767522 /* FeedSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSettingView.swift; sourceTree = "<group>"; };
 		3EBC048724EAE9F800767522 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		3EC08AD924EEEC30004B7245 /* iTunes Searcher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "iTunes Searcher.entitlements"; sourceTree = "<group>"; };
 		3ED2632224EC382300443F4F /* SingleFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleFeedView.swift; sourceTree = "<group>"; };
 		3ED2632524EC90D700443F4F /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
 		3ED2632724EC90FA00443F4F /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
@@ -72,7 +73,7 @@
 		3EBC046A24E8EEBF00767522 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3EBC046924E8EEBF00767522 /* iTunes Searcher.app */,
+				3EBC046924E8EEBF00767522 /* iTunes RSS Searcher.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -80,6 +81,7 @@
 		3EBC046B24E8EEBF00767522 /* iTunes Searcher */ = {
 			isa = PBXGroup;
 			children = (
+				3EC08AD924EEEC30004B7245 /* iTunes Searcher.entitlements */,
 				3ED2632424EC90A900443F4F /* Utilities */,
 				3EBC048024E8EEE900767522 /* Model */,
 				3EBC046C24E8EEBF00767522 /* AppDelegate.swift */,
@@ -138,9 +140,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3EBC046824E8EEBF00767522 /* iTunes Searcher */ = {
+		3EBC046824E8EEBF00767522 /* iTunes RSS Searcher */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3EBC047D24E8EEC000767522 /* Build configuration list for PBXNativeTarget "iTunes Searcher" */;
+			buildConfigurationList = 3EBC047D24E8EEC000767522 /* Build configuration list for PBXNativeTarget "iTunes RSS Searcher" */;
 			buildPhases = (
 				3EBC046524E8EEBF00767522 /* Sources */,
 				3EBC046624E8EEBF00767522 /* Frameworks */,
@@ -150,11 +152,11 @@
 			);
 			dependencies = (
 			);
-			name = "iTunes Searcher";
+			name = "iTunes RSS Searcher";
 			packageProductDependencies = (
 			);
 			productName = "iTunes Searcher";
-			productReference = 3EBC046924E8EEBF00767522 /* iTunes Searcher.app */;
+			productReference = 3EBC046924E8EEBF00767522 /* iTunes RSS Searcher.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -171,7 +173,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3EBC046424E8EEBF00767522 /* Build configuration list for PBXProject "iTunes Searcher" */;
+			buildConfigurationList = 3EBC046424E8EEBF00767522 /* Build configuration list for PBXProject "iTunes RSS Searcher" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -186,7 +188,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3EBC046824E8EEBF00767522 /* iTunes Searcher */,
+				3EBC046824E8EEBF00767522 /* iTunes RSS Searcher */,
 			);
 		};
 /* End PBXProject section */
@@ -362,15 +364,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "iTunes Searcher/iTunes Searcher.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"iTunes Searcher/Preview Content\"";
 				DEVELOPMENT_TEAM = B6LXP9JCNK;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "iTunes Searcher/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.04;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.HuyOng.iTunes-Searcher";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -383,15 +389,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "iTunes Searcher/iTunes Searcher.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "\"iTunes Searcher/Preview Content\"";
 				DEVELOPMENT_TEAM = B6LXP9JCNK;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "iTunes Searcher/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.04;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.HuyOng.iTunes-Searcher";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -402,7 +412,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3EBC046424E8EEBF00767522 /* Build configuration list for PBXProject "iTunes Searcher" */ = {
+		3EBC046424E8EEBF00767522 /* Build configuration list for PBXProject "iTunes RSS Searcher" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3EBC047B24E8EEC000767522 /* Debug */,
@@ -411,7 +421,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3EBC047D24E8EEC000767522 /* Build configuration list for PBXNativeTarget "iTunes Searcher" */ = {
+		3EBC047D24E8EEC000767522 /* Build configuration list for PBXNativeTarget "iTunes RSS Searcher" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3EBC047E24E8EEC000767522 /* Debug */,

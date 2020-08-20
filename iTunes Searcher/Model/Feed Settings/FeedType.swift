@@ -6,7 +6,7 @@
 //
 
 extension FeedSetting {
-    enum FeedType: String, CaseIterable {
+    enum FeedType: String, CaseIterable, Codable {
         case topFree            = "top-free"
         case topPaid            = "top-paid"
         case topGrossing        = "top-grossing"

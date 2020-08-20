@@ -7,13 +7,15 @@
 
 import Foundation
 
-struct FeedSetting {
+struct FeedSetting: Codable {
     var Country: Country
     var MediaType: MediaType
     var FeedType: FeedType
     var Genre: Genre
     var ResultLimit: Int
     var AllowExplicit: Bool
+    
+    static let Key = "FeedSettingKey"
 }
 
 extension FeedSetting: Equatable {

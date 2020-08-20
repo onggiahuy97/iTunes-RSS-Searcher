@@ -44,6 +44,7 @@ struct ContentView: View {
     
     private var listView: some View {
         List {
+            infoView
             ForEach(model.feed.feed.results, id: \.self) { result in
                 Button(action: {
                     let url = URL(string: result.url)!
@@ -55,6 +56,10 @@ struct ContentView: View {
             }
         }
         .listStyle(PlainListStyle())
+    }
+    
+    private var infoView: some View {
+        return ScrollView(.horizontal, showsIndicators: false) { Text(model.toString()) }
     }
 }
 

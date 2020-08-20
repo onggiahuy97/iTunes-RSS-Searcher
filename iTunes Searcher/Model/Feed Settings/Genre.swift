@@ -6,7 +6,7 @@
 //
 
 extension FeedSetting {
-    enum Genre: String, CaseIterable {
+    enum Genre: String, CaseIterable, Codable {
         case all            = "all"
         case games          = "games"
         case country        = "country"
